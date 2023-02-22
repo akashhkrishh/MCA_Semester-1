@@ -1,0 +1,19 @@
+def printVal(val):
+    New=Dict[val]
+    print("Student's RollNumber is : {}".format(New["Roll"]))
+    print("Student's Name is : {}".format(val))
+    print("Student's Total Mark is : {}".format(New["Mark"]))
+    
+if __name__=="__main__":
+    n=20
+    Dict=dict()
+    add=0
+    for i in range(0,n):
+        roll=int(input("Enter the Roll.No : "))
+        name=input("Enter the Name : ")
+        mark=int(input("Enter the Total Mark : "))
+        Dict.update({name:{"Roll":roll,"Mark":mark}})
+        add=add+mark
+    val=input("Enter the Student Name : ")
+    printVal(val)
+    print("Average marks of all the students {:.2f}".format(add/n))
