@@ -1,0 +1,30 @@
+class University:
+    def __init__(self):
+        self.univ = "MIT"
+    def display(self):
+        print("The University name is : {}".format(self.univ))
+class Course(University): 
+    def __init__(self):
+        University.__init__(self)
+        self.course = "CSE"
+    def display(self):
+        print("The Course name is : {}".format(self.course))
+        University.display(self)
+class Branch(University):
+    def __init__(self):
+        self.branch = "Data Science"
+    def display(self):
+        print("The Branch name is : {}".format(self.branch))
+class Student(Course, Branch):                           
+    def __init__(self):
+        self.name = "James"
+        Branch.__init__(self)
+        Course.__init__(self)
+    def display(self):
+        print("The Name of the Student is : {}".format(self.name))
+        Branch.display(self)
+        Course.display(self)
+
+if __name__=="__main__":
+    ob = Student()  
+    ob.display() 
